@@ -1,13 +1,15 @@
 import React from 'react'
 import ProjectMenu from './ProjectMenu'
 
-const ProjectList = () => {
+const ProjectList = ({projects}) => {
     return (
         <div className="project-list section">
-            <ProjectMenu />
-            <ProjectMenu />
-            <ProjectMenu />
-            <ProjectMenu />
+            { projects && projects.map(project => {
+                return (
+                    <ProjectMenu project={project} key={project.id} />
+                )
+
+            })}
         </div>
     )
 }
